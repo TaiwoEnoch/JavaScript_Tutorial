@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Array method in JavaScrip</h1>
+  <!-- Array helps us store multitude number of elements in JavaScrip -->
+  <p id="demo"></p>
+  <script lang="JavaScript" type="text/JavaScript">
+    // ARRAY OPERATIONS
+    let cars = ['bmw', 'volvo', 'mercedes', 'audi'];
+
+    // innerHTML is a property of the DOM and it is responsible for the content of the element that should display on the web page
+    document.getElementById('demo').innerHTML = cars;
+
+    // How  to access an array element
+    let bmw = cars[0];
+    document.getElementById('demo').innerHTML = bmw;
+
+    //Array length Property which display the length of the array
+    let length = cars.length;
+    document.getElementById('demo').innerHTML = length;
+
+    // Access the last array element
+    let last = cars[cars.length -1];
+    document.getElementById('demo').innerHTML = last;
+
+    // How to LOOP over array items
+    cars.forEach((item, index, array) => {console.log(item, index)});
+
+    // ARRAY METHODS
+    // toString() method converts an array to a string of (comma separated) array values
+    document.getElementById('demo').innerHTML = cars.toString();
+
+    // pop() method removes the last element from an array
+    let last1 = cars.pop();
+    document.getElementById('demo').innerHTML = last1;
+    let last2 = cars[cars.length -1];
+    console.log(last2);
+
+    // push() method adds a new element to an array (at the end)
+    cars.push('audi');
+    document.getElementById('demo').innerHTML = cars;
+
+    // shift() method removes the first array element and "shifts" all other elements to a lower index
+    cars.shift();
+    document.getElementById('demo').innerHTML = cars;
+
+    // unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements
+    cars.unshift('hyundai');
+    document.getElementById('demo').innerHTML = cars;
+
+    // concat() method creates a new array by merging (concatenating) existing arrays
+    let bikes = ['honda', 'yamaha', 'suzuki'];
+    let vehicles = cars.concat(bikes);
+    document.getElementById('demo').innerHTML = vehicles;
+
+    // sort() method sorts an array alphabetically
+    vehicles.sort();
+    document.getElementById('demo').innerHTML = vehicles;
+
+    // reverse() method reverses the elements in an array
+    vehicles.reverse();
+    document.getElementById('demo').innerHTML = vehicles;
+
+    // MAP, REDUCE, AND FILTER
+
+    // Array.map() method creates a new array by performing a function on each array element  
+    let num1 = [2, 3, 4, 5, 6, 7];
+    let num2 = num1.map(multiply);
+    function multiply(value) {
+      return value * 2;
+    }
+    document.getElementById('demo').innerHTML = num2;
+
+    // Array.filter() method creates a new array with array elements that passes a test
+    let num3 = num1.filter(comp);
+    function comp(value) {
+      return value > 4;
+    }
+    document.getElementById('demo').innerHTML = num3;
+
+    // Array.reduce() method runs a function on each array element to produce (reduce it to) a single value
+    let num4 = num1.reduce(sum);
+    function sum(total, value) {
+      return total + value;
+    }
+    document.getElementById('demo').innerHTML = num4;
+    
+  </script>
+</body>
+</html>

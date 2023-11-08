@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Object</title>
+</head>
+<body>
+  <h1>Creating JavaScript Objects</h1>
+  <p id="demo"></p>
+
+  <script>
+    // First Method you can use to create objects in JavaScript
+    var student = {
+      name: 'Chris',
+      Age: 21,
+      Studies: 'Computer Science'
+    };
+    document.getElementById('demo').innerHTML = student.name + ' of the age ' + student.Age + ' years old and studies ' + student.Studies;
+
+  </script>
+
+  <script>
+    // Second Method you can use to create objects in JavaScript
+    var student = new Object();
+    student.name = 'Chris',
+    student.Age = 21,
+    student.Studies = 'Computer Science'
+    document.getElementById('demo').innerHTML = student.name + ' of the age ' + student.Age + ' years old and studies ' + student.Studies;
+  </script>
+
+  <script>
+    // Third Method you can use to create objects in JavaScript
+    function Student(name, age, studies) {
+      this.name = name;
+      this.age = age;
+      this.studies = studies;
+    }
+    var student1 = stud('Chris', 21, 'Computer Science');
+    document.getElementById('demo').innerHTML = student1.name + ' of the age ' + student1.age + ' years old and studies ' + student1.studies;
+  </script>
+
+</body>
+</html>

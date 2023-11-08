@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Async Await</h1>
+  <p id="demo"></p>
+  <!-- sycronous function is a function that returns every action sequentially. -->
+  <script>
+    let result = function(score) {
+      return new Promise(function(resolve, reject) {
+        console.log("Checking the score...");
+        if (score >= 50) {
+          resolve("You passed the exam!");
+        } else {
+          reject("You failed the exam!");
+        }
+      });
+    }
+    let grade = function(response) {
+      return new Promise(function(resolve, reject) {
+        console.log("Checking the grade...");
+        resolve(response + " You got an A!");
+      })
+    }
+    // result(80).then(response => {
+    //   console.log("Results reviewed");
+    //   return grade(response);
+    // }).then(finalgrade => {
+    //   console.log("finalgrade");
+    // }).catch(error => {
+    //   console.log("Error");
+    // });
+    async function calculateResult() {
+      try {
+      const response = await result(20);
+      console.log("Results reviewed");
+      const finalgrade = await grade(response);
+      console.log(finalgrade);
+      } catch(error) {
+        console.log(error);
+      }
+    }
+    calculateResult();
+  </script>
+</body>
+</html>

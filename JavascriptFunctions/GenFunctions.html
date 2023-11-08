@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Generator Functions</h1>
+  <p id="demo"></p>
+
+  <!-- Generator functions are special functions that can be paused and resumed at a later time, while maintaining their context. -->
+
+  <script>
+    function* myGenerator() {
+      yield "Hello";
+      yield "World!";
+      return "Hello World!";
+    }
+
+    let generator = myGenerator();
+    let one = generator.next();
+    let two = generator.next();
+    let three = generator.next();
+    alert(JSON.stringify(one));
+    alert(JSON.stringify(two));
+    alert(JSON.stringify(three));
+  </script>
+</body>
+</html>

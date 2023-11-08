@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Object Accessors</title>
+</head>
+<body>
+  <h1>JS Object Accessors</h1>
+  <p id="demo"></p>
+  <!-- Getters and Setters allow you to define Object Accessors (Computed Properties) -->
+  <script>
+    var car = {
+      model: 'BMW 320d',
+      color: 'Black',
+      fuel_type: 'Diesel',
+      get fuel() {
+        return this.fuel_type;
+      },
+    }
+    document.getElementById('demo').innerHTML = car.fuel;
+  </script>
+
+  <script>
+    var car = {
+      model: "Audi A4",
+      color: "Bright Red",
+      fuel_type: "",
+      set fuel(fuel) {
+        this.fuel_type = fuel;
+      }
+    }
+    car.fuel = "Petrol";
+    document.getElementById("demo").innerHTML = car.fuel_type;
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Arrow Functions</h1>
+
+  <p id="demo"></p>
+  <!-- Arrow functions do not have their own this. They are not well suited for defining object methods. -->
+
+  <script>
+    const Myfunc = (a,b,c) => {return a * b * c};
+    let product = Myfunc(2,3,4);
+    document.getElementById("demo").innerHTML = ' The product of the three digits are ' + product;
+  </script>
+</body>
+</html>
